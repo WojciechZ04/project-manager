@@ -11,7 +11,7 @@ export default function Tasks() {
   }, []);
 
   const fetchTasks = () => {
-    fetch(`${BASE_URL}/api/api/tasks`, {
+    fetch(`${BASE_URL}/api/tasks`, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
