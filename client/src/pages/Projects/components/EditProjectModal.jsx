@@ -4,6 +4,8 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Modal from "@mui/material/Modal";
 import "../../../components/Modal.css";
+import { BASE_URL } from "../../../config";
+
 export default function EditProjectModal({ showModal, setShowModal, project }) {
   const [projectName, setProjectName] = useState(project.name);
   const [projectDeadline, setProjectDeadline] = useState(project.deadline);
@@ -28,7 +30,7 @@ export default function EditProjectModal({ showModal, setShowModal, project }) {
   if (!showModal) return null;
   const handleEditProject = async () => {
     const response = await fetch(
-      `http://localhost:5000/api/projects/${project.id}`,
+     `${BASE_URL}/api/projects/${project.id}`,
       {
         method: "PUT",
         headers: {

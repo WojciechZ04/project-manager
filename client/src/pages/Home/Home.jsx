@@ -7,6 +7,7 @@ import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useNavigate } from "react-router-dom";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 import "./Home.css";
+import { BASE_URL } from "../../config";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
@@ -27,7 +28,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/home", {
+    fetch(`${BASE_URL}/api/home`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
         contentType: "application/json",
@@ -113,7 +114,7 @@ export default function Home() {
               isCalendarVisible ? "visible" : ""
             }`}
           >
-            <div className="calenar-wrapper">
+            <div className="calendar-wrapper">
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateCalendar className="calendar" />
               </LocalizationProvider>

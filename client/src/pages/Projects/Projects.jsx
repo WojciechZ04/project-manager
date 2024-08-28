@@ -3,6 +3,7 @@ import Project from "./components/Project";
 import DataControls from "./components/DataControls";
 import CreateProjectModal from "./components/CreateProjectModal";
 import "./Projects.css";
+import { BASE_URL } from "../../config";
 
 export default function Projects() {
   const [open, setOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function Projects() {
   const handleOpen = () => setOpen(true);
 
   const fetchProjects = useCallback(() => {
-    fetch("http://localhost:5000/api/projects", {
+    fetch(`${BASE_URL}/api/projects`, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),

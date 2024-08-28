@@ -1,6 +1,7 @@
 import "./Task.css";
 import React, { useState } from "react";
 import DeleteTaskModal from "./DeleteTaskModal";
+import { BASE_URL } from "../../../config";
 
 export default function Task({ task, fetchTasks }) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -12,7 +13,7 @@ export default function Task({ task, fetchTasks }) {
   const updateTaskStatus = async (taskId, status) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/tasks/${taskId}`,
+       `${BASE_URL}/api/tasks/${taskId}`,
         {
           method: "PUT",
           headers: {

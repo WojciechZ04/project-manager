@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { BASE_URL } from "../../config";
 
 export default function ProjectDetails() {
   const { projectId } = useParams();
@@ -11,7 +12,7 @@ export default function ProjectDetails() {
     const fetchProject = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/projects/${projectId}`,
+          `${BASE_URL}/api/projects/${projectId}`,
           {
             method: "GET",
             headers: {

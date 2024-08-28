@@ -2,6 +2,8 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import "../../../components/Modal.css";
+import { BASE_URL } from "../../../config";
+
 export default function DeleteProjectModal({
   showModal,
   setShowModal,
@@ -12,7 +14,7 @@ export default function DeleteProjectModal({
   const handleDelete = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/projects/${project.id}`,
+        `${BASE_URL}/api/projects/${project.id}`,
         {
           method: "DELETE",
           headers: {

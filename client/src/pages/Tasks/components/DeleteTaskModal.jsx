@@ -1,5 +1,6 @@
 import { Modal, Box, Button } from "@mui/material";
 import "../../../components/Modal.css";
+import { BASE_URL } from "../../../config";
 
 export default function DeleteTaskModal({ showModal, setShowModal, task, fetchTasks }) {
 	if (!showModal) return null;
@@ -7,7 +8,7 @@ export default function DeleteTaskModal({ showModal, setShowModal, task, fetchTa
 	const handleDelete = async () => {
 		try {
 		  const response = await fetch(
-			`http://localhost:5000/api/tasks/${task.project_id}/${task.id}`,
+			`${BASE_URL}/api/tasks/${task.project_id}/${task.id}`,
 			{
 			  method: "DELETE",
 			  headers: {

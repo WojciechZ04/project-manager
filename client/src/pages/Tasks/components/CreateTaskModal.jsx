@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Modal, MenuItem, Select, Checkbox, TextField } from "@mui/material";
 import "../../../components/Modal.css";
+import { BASE_URL } from "../../../config";
+
 export default function CreateTaskModal({
   open,
   setOpen,
@@ -18,7 +20,7 @@ export default function CreateTaskModal({
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/projects", {
+        const response = await fetch(`${BASE_URL}/api/projects`, {
           method: "GET",
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -42,7 +44,7 @@ export default function CreateTaskModal({
       return;
     }
 
-    const response = await fetch("http://localhost:5000/api/tasks", {
+    const response = await fetch(`${BASE_URL}/api/tasks`, {
       method: "POST",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),

@@ -3,6 +3,7 @@ import EditModal from "./components/EditModal";
 import DeleteModal from "./components/DeleteModal";
 import Button from "@mui/material/Button";
 import "./Profile.css";
+import { BASE_URL } from "../../config";
 
 export default function Profile() {
   const [profile, setProfile] = useState({});
@@ -17,7 +18,7 @@ export default function Profile() {
 
   const fetchProfile = () => {
     const token = localStorage.getItem("token");
-    fetch("http://localhost:5000/api/profile", {
+    fetch(`${BASE_URL}/api/profile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -48,7 +49,7 @@ export default function Profile() {
     };
 
     const token = localStorage.getItem("token");
-    fetch(`http://localhost:5000/api/profile/${profile.id}`, {
+    fetch(`${BASE_URL}/api/profile/${profile.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +69,7 @@ export default function Profile() {
 
   const handleDelete = () => {
     const token = localStorage.getItem("token");
-    fetch(`http://localhost:5000/api/profile/${profile.id}`, {
+    fetch(`${BASE_URL}/api/profile/${profile.id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TaskColumn from "./components/TaskColumn";
 import "./Tasks.css";
+import { BASE_URL } from "../../config";
 
 export default function Tasks() {
   const [tasks, setTasks] = useState([]);
@@ -10,7 +11,7 @@ export default function Tasks() {
   }, []);
 
   const fetchTasks = () => {
-    fetch("http://localhost:5000/api/tasks", {
+    fetch(`${BASE_URL}/api/api/tasks`, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),

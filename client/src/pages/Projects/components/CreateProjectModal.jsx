@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import Modal from "@mui/material/Modal";
 import Checkbox from "@mui/material/Checkbox";
 import "../../../components/Modal.css";
+import { BASE_URL } from "../../../config";
 
 export default function CreateProjectModal({ open, setOpen, fetchProjects }) {
   const [projectName, setProjectName] = useState("");
@@ -20,7 +21,7 @@ export default function CreateProjectModal({ open, setOpen, fetchProjects }) {
       return;
     }
 
-    const response = await fetch("http://localhost:5000/api/projects", {
+    const response = await fetch(`${BASE_URL}/api/projects`, {
       method: "POST",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),

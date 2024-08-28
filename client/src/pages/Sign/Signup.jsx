@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
+import "./Sign.css";
+import { BASE_URL } from "../../config";
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -14,7 +16,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/sign/signup", {
+      const response = await fetch(`${BASE_URL}/api/sign/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
