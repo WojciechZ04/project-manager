@@ -1,0 +1,144 @@
+.task {
+	padding-top: 10px;
+	padding: 10px 0;
+	display: flex;
+	border-bottom: solid 1px var(--primary-color);
+}
+
+.project-assigned {
+	color: var(--secondary-color);
+	font-size: 0.8rem;
+	margin: 0;
+	margin-bottom: 10px;
+	grid-column: 1;
+} 
+
+.task__title {
+	grid-column: 1;
+}
+
+.task__deadline {
+	grid-column: 2;
+	margin: 0;
+	grid-row: 1 / span 2;
+	font-size: 0.8rem;
+}
+
+.task-details {
+	flex: 1;
+}
+
+.task-details .grid {
+	display: grid;
+	grid-template-columns: 4fr auto;
+} 
+
+.task-controls {
+	width: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.task-controls .edit-status {
+	margin-top: auto;
+}
+
+.task-icon {
+	color: var(--secondary-color);
+	opacity: 0.5;
+	font-size: 1.5rem;
+}
+
+.task-icon:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+h2 {
+	font-size: 1.2rem;
+	margin: 0;
+}
+
+.checkbox {
+	width: 70px;
+	display: flex;
+	margin-top: 20px;
+	justify-content: center;
+}
+
+.checkbox-btn {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+  
+.checkbox-btn input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+  
+.checkbox-btn label {
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	border: 2.5px solid var(--secondary-color);
+	transition: .2s linear;
+}
+.checkbox-btn input:checked ~ .checkmark {
+	background-color: transparent;
+}
+  
+.checkmark:after {
+	content: "";
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	left: 50%;
+	top: 40%;
+	width: 10px;
+	height: 14px;
+	border: 2px solid #0ea021;
+	filter: drop-shadow(0px 0px 10px #0ea021);
+	border-width: 0 2.5px 2.5px 0;
+	transition: .2s linear;
+	transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
+}
+  
+.checkbox-btn input:checked ~ .checkmark:after {
+	visibility: visible;
+	opacity: 1;
+	transform: translate(-50%, -50%) rotate(0deg) scale(1);
+	animation: pulse 1s ease-in;
+}
+  
+.checkbox-btn input:checked ~ .checkmark {
+	transform: rotate(45deg);
+	border: none;
+}
+  
+@keyframes pulse {
+	0%,
+	100% {
+	  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+	}
+	50% {
+	  transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
+	}
+}

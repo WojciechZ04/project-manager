@@ -1,0 +1,155 @@
+.home {
+	text-align: center;
+  }	
+.home h1 {
+	display: inline-block;
+	text-align: center;
+	padding: 60px 10px 5px 10px;
+	box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.5); 
+}
+
+.home h2 {
+	font-size: 1.5rem;
+}
+
+.home-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 50px 100px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	min-height: 400px;
+}
+
+.home-content {
+	width: 80%;
+	background-color: var(--primary-color-light);
+}
+
+.home-content h2 {
+	text-align: center;
+	padding: 20px;
+	border-bottom: solid 1px var(--primary-color);
+}
+  
+.home-sidebar {
+	width: 20%;
+	height: 100%;
+	display: flex;
+	padding: 20px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box; 
+	position: relative;
+}	
+
+.home-tasks {
+	display: flex;
+	flex: 1 1 auto;
+	border-bottom: solid 1px var(--primary-color);
+	text-align: center;
+	justify-content: center;
+	min-height: 100px;
+}
+
+.home-projects {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	min-height: 100px;
+}
+
+.home-projects h3 {
+	text-align: left;
+}
+
+.home-projects p, .home-tasks p {
+	align-self: center;
+
+}
+
+.calendar-container {
+	position: relative;
+	width: 100%;
+}
+
+.calendar {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.home-sidebar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%; 
+}
+
+.home-sidebar-header i {
+	font-size: 2.5rem;
+}
+
+.home-sidebar-header i:hover {
+	color: var(--neutral-color);
+	cursor: pointer;
+}
+
+@media (max-width: 1600px) {
+	.home-sidebar {
+	  width: 10%; 
+	  display: flex;
+	  flex-direction: column; 
+	  align-items: center;
+	}
+	.home-content {
+		width: 90%;
+	}
+  
+	.home-sidebar-header {
+	  flex-direction: column; 
+	  justify-content: center; 
+	  align-items: center; 
+	}
+  
+	.home-sidebar-header i {
+	  margin: 10px 0; 
+	}
+  
+	.home-sidebar-header i:nth-child(2) {
+	  display: block; 
+	}
+  
+	.calendar-container {
+		display: none; 
+		position: absolute;
+		width: 300px; 
+		right: 100%; 
+		top: -10px; 
+		z-index: 1000; 
+		
+	  }
+
+	  .calendar {
+		
+		background-color: var(--primary-color);
+	  }
+  
+	.calendar-container.visible {
+	  display: block; 
+	}
+  }
+  
+  @media (min-width: 1601px) {
+	.home-sidebar-header i:nth-child(2) {
+	  display: none; 
+	}
+  
+	.calendar-container {
+	  display: block; 
+	}
+  }

@@ -1,0 +1,21 @@
+.data-controls {
+	display: flex;
+  	justify-content: center;
+  	margin-bottom: 1rem;	
+}
+
+.data-controls .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+	border-color: var(--neutral-color); 
+}
+
+.Mui-selected {
+    background-color: var(--neutral-color-background) !important;
+}
+
+.search-bar .MuiOutlinedInput-root {
+	width: 400px; 
+}
+
+.data-controls .MuiOutlinedInput-root {
+	background-color: var(--primary-color-light);
+}

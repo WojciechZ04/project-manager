@@ -1,0 +1,79 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.inline {
+	display: grid;
+  	grid-template-columns: repeat(3, 1fr);
+  	gap: 10px; 
+  }
+  
+  .inline p {
+	margin-right: 10px; 
+  }
+
+  .profile-image {
+	display: block;
+	background-color: var(--secondary-color);
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	transition: opacity 0.3s ease;
+  }
+
+  .profile-image-container {
+	position: relative;
+	display: inline-block;
+  }
+
+  .profile-image-container:hover .profile-image {
+	cursor: pointer;
+	opacity: 0.3;
+  }
+  
+  .profile-image-container .edit-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	color: var(--secondary-color);
+	font-size: 24px; 
+  }
+  
+  .profile-image-container:hover .edit-icon {
+	cursor: pointer;	
+	opacity: 1;
+  }
+
+  .profile-icon {
+	margin-left: 20px;
+	align-self: center;
+	color: var(--secondary-color);
+	opacity: 0.5;
+	font-size: 1.5rem;
+}
+
+.profile-icon:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.profile-data {
+	margin-top: 40px;
+}
+
+.profile Button {
+	margin-top: 50px;
+	color: red;
+	border-radius: 0;
+}
+
+.profile Button:hover {
+	background-color: rgba(250, 167, 167, 0.192);
+}

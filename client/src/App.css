@@ -1,0 +1,48 @@
+.header {
+	background-color: var(--secondary-color) !important;
+}
+
+.centered {
+	text-align: center;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	padding-top: 100px;
+}
+
+#main {
+	position: fixed; 
+	top: 0;
+	left: 0;
+	width: 100vw; 
+	height: 100vh; 
+	background-color: var(--primary-color); 
+	transition: opacity 0.5s ease; 
+	overflow-y: auto; 
+	z-index: 1; 
+}
+  
+.sidebar:hover ~ #main {
+	opacity: 0.5; 
+}
+
+.container {
+	margin-left: 85px;
+}
+
+.content {
+	margin: 3rem 5rem;
+}
+
+.title {
+	box-shadow: 0 0 10px var(--accent-color);
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	margin-top: 0;
+	margin-bottom: 20px;
+	padding: 30px 60px;
+}
+
+.error {
+	color: red;
+}

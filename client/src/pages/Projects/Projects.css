@@ -1,0 +1,49 @@
+.data-controls {
+	display: flex;
+	gap: 30px;
+}
+
+.projects-grid {
+	margin: 2rem 0;
+	display: grid;
+	gap: 20px;
+}
+
+.projects {
+	display: grid;
+	gap: 20px;
+}
+
+.project-descriptions {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 53px; 
+	text-align: center;  
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+
+.no-projects {
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.new-project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border: solid 3px var(--secondary-color);
+    opacity: 0.5; 
+}
+
+.new-project:hover {
+	cursor: pointer;
+	background-color: var(--primary-color-light);
+    opacity: 1; 
+}
+
+.project-link {
+	text-decoration: none; 
+	color: inherit; 
+}

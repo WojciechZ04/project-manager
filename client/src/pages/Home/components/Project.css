@@ -1,0 +1,23 @@
+.home-project {
+	display: grid;
+	grid-template-columns: 200px 100px auto;
+	margin: 10px 0;
+	padding: 10px 40px;
+	gap: 20px;
+	align-items: center;
+}
+
+.progress-bar {
+	display: flex;
+	align-items: center;
+}
+  
+.progress-bar .border-linear-progress {
+	flex: 1; 
+	min-width: 60px; 
+}
+  
+.progress-bar p {
+	margin-left: 20px;
+	width: 50px; 
+}

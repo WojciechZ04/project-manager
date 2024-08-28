@@ -1,0 +1,29 @@
+.column {
+	background-color: var(--primary-color-light);
+	box-shadow: 0px 0px 15px -5px var(--secondary-color);
+}
+
+.label {
+	font-size: 1.4rem;
+	margin: 20px;
+}
+
+.create-task-section {
+	margin: 0 20px;
+	color: var(--secondary-color);
+	opacity: 0.5;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.create-task-section:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+hr {
+	margin: 0;
+}
+
+

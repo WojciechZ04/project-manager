@@ -1,0 +1,11 @@
+.task-columns {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 40px;
+}
+  
+.task-columns > div {
+	flex: 1;
+	margin: 0 10px;
+}
