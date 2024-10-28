@@ -11,16 +11,13 @@ export default function ProjectDetails() {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const res = await fetch(
-          `${BASE_URL}/api/projects/${projectId}`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: "Bearer " + localStorage.getItem("token"),
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const res = await fetch(`${BASE_URL}/api/projects/${projectId}`, {
+          method: "GET",
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
+        });
 
         if (res.status === 403) {
           throw new Error("Forbidden");
@@ -51,16 +48,11 @@ export default function ProjectDetails() {
   }
 
   return (
-    <div className="container">
+    <div className="container centered">
       <div className="title">
-        <h1>{project.name}</h1>
+        <h1>Oh no, you got me!</h1>
       </div>
-
-      <ul>
-        {project.tasks.map((task) => (
-          <li key={task.id}>{task.name}</li>
-        ))}
-      </ul>
+      <p>Sorry, but I still work on this one!</p>
     </div>
   );
 }
