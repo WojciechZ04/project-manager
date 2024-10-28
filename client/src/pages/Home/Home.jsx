@@ -67,7 +67,11 @@ export default function Home() {
           return { ...project, completionPercentage };
         });
 
-        setProjects(projectsWithCompletion);
+        const activeProjects = projectsWithCompletion.filter(
+          (project) => project.completionPercentage !== 100
+        );
+
+        setProjects(activeProjects);
       });
   }, []);
 
